@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2kq4cmuv0esk"]
+
+[ext_resource type="Script" uid="uid://c3jui00sreqhi" path="res://Scenes/TerrainGenerator.cs" id="1_5u1dk"]
+[ext_resource type="Script" uid="uid://igxft7k8ty3j" path="res://Scenes/OrbitCamera.cs" id="1_enlwa"]
+[ext_resource type="Script" uid="uid://dxxjbudafuwhm" path="res://Scenes/TextureGeneration.cs" id="3_xbfor"]
+[ext_resource type="Script" uid="uid://b3fdd5tcsq37g" path="res://Scenes/ComputeTextureGenerator.cs" id="4_0gutl"]
+
+[node name="TerrainGenerator" type="Node3D" node_paths=PackedStringArray("_mesh")]
+script = ExtResource("1_5u1dk")
+_mesh = NodePath("MeshInstance3D")
+HeightMapGeneratorPath = NodePath("ComputeTextureGenerator")
+HeightScale = 2.0
+Resolution = 1024
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.930033, 0.367475, 0, -0.367475, 0.930033, 0, 6, 6)
+script = ExtResource("1_enlwa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="TextureGenerator" type="Node3D" parent="."]
+script = ExtResource("3_xbfor")
+
+[node name="ComputeTextureGenerator" type="Node3D" parent="."]
+script = ExtResource("4_0gutl")

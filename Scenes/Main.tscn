@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg1ji0h13aouy"]
+
+[ext_resource type="Script" uid="uid://dpbtqan8hk2vu" path="res://Scenes/Main.cs" id="1_r150o"]
+[ext_resource type="Script" uid="uid://igxft7k8ty3j" path="res://Scenes/OrbitCamera.cs" id="2_idj7w"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("_mesh")]
+script = ExtResource("1_r150o")
+_mesh = NodePath("MeshInstance3D")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.47139)
+script = ExtResource("2_idj7w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.690331)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.798173, 0.602428, 0, -0.602428, 0.798173, 0, 0, 0)

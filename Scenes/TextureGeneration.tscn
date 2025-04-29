@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://hf28p646oj7l"]
+
+[ext_resource type="Script" uid="uid://b3fdd5tcsq37g" path="res://Scenes/ComputeTextureGenerator.cs" id="1_ak44p"]
+[ext_resource type="Script" uid="uid://igxft7k8ty3j" path="res://Scenes/OrbitCamera.cs" id="2_ak44p"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qvpo0"]
+
+[node name="TextureGeneration" type="Node3D" node_paths=PackedStringArray("Mesh")]
+script = ExtResource("1_ak44p")
+Mesh = NodePath("MeshInstance3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_qvpo0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.830814)
+script = ExtResource("2_ak44p")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.21526)
